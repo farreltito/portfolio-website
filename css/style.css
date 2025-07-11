@@ -1,0 +1,63 @@
+/* 
+ * Custom CSS for Farrel Tito's Personal Portfolio
+ * Yoimiya Theme
+ * Inspired by Genshin Impact's color palette of the character Yoimiya.
+ * This theme features vibrant colors and a playful design.
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+body {
+    font-family: 'Inter', sans-serif; /* Font: Inter from Google Fonts */
+    background-color: #2a2a3e;      /* Dark Slate Blue */
+    color: #f0e6d2;                 /* Parchment/Light Cream */
+    overflow-x: hidden;               /* Overflow-x property to hide horizontal scroll */
+}
+
+.border-yoimiya {
+    border-color: rgba(255, 152, 0, 0.2);
+}
+
+.link-yoimiya {
+    color: #ffb74d;
+    text-decoration: none;                                                         /* Remove underline from links */
+    transition: color 0.3s ease, text-decoration 0.3s ease, font-weight 0.3s ease; /* Smooth transition for hover effects */ 
+}
+
+.link-yoimiya:hover {
+    color: #ffcc80;
+    text-decoration: underline; /* Underline on hover */
+    font-weight: bold;          /* Bold on hover */
+}
+
+.gradient-text {
+    background: linear-gradient(to right, #ff9800, #ffeb3b); /* Orange to Yellow */
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.project-card {
+     background-color: rgba(83, 54, 42, 0.5);
+     transition: all 0.3s ease;
+     border: 1px solid transparent;
+}
+
+.project-card:hover {
+    background-color: rgba(83, 54, 42, 0.8);
+    border-color: rgba(255, 152, 0, 0.4);
+}
+
+.tech-item {
+    background-color: rgba(255, 255, 255, 0.05);
+    padding: 0.5rem 1rem;
+    border-radius: 9999px;
+    font-size: 0.875rem;
+    font-weight: 500;
+}
+
+.disabled {
+  pointer-events: none;
+  opacity: 0.8;
+  cursor: not-allowed;
+}
