@@ -12,8 +12,7 @@
     <!-- Link to Tailwind CSS and Google Fonts -->
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
     <!-- Link to the external files -->
     <link rel="stylesheet" href="css/style.css">
@@ -30,19 +29,49 @@
                 <a href="/" class="text-lg font-bold tracking-tight gradient-text">Farrel Tito</a>
             </div>
             <nav class="hidden md:flex items-center space-x-8">
-                <a href="pages/aboutme.html" class="text-sm font-medium text-gray-300 hover:text-white transition-colors">About</a>
-                <a href="#pages/projects.html" class="text-sm font-medium text-gray-300 hover:text-white transition-colors">Projects</a>
+                <a href="pages/about-me.html" class="text-sm font-medium text-gray-300 hover:text-white transition-colors">About</a>
+                <a href="#projects" class="text-sm font-medium text-gray-300 hover:text-white transition-colors">Projects</a>
                 <a href="mailto:titofarrel2@gmail.com" class="text-sm font-medium text-gray-300 hover:text-white transition-colors">Contact via e-mail</a>
             </nav>
+            <!-- Hamburger Button (Visible on Mobile Only) -->
+            <button id="hamburger-btn" class="md:hidden text-white focus:outline-none">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+            </button>
         </header>
+
+        <!-- Slide-in Mobile Menu -->
+        <div id="mobile-menu" class="fixed top-0 right-0 w-2/3 max-w-sm h-full bg-[#2a2a3e] z-50 shadow-lg transform translate-x-full transition-transform duration-300">
+            <nav class="p-6 flex flex-col gap-4 text-sm text-white">
+                <a href="pages/about-me.html" class="hover:text-yellow-400">About</a>
+                <a href="#projects" class="hover:text-yellow-400">Projects</a>
+                <a href="mailto:titofarrel2@gmail.com" class="hover:text-yellow-400">Contact via e-mail</a>
+            </nav>
+            <!-- Close Button -->
+            <div class="mt-auto text-center pb-6">
+            <button id="close-menu-btn" class="inline-flex items-center gap-2 text-sm font-medium text-gray-400 hover:text-white transition">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <line x1="18" x2="6" y1="6" y2="18" />
+                <line x1="6" x2="18" y1="6" y2="18" />
+                </svg>
+                Close Menu
+            </button>
+            </div>
+        </div>
+
+<!-- Overlay -->
+<div id="overlay" class="fixed inset-0 bg-black/50 z-40 hidden"></div>
 
         <!-- Hero/Main Section -->
         <main>
             <section id="home" class="py-20 md:py-32">
                 <div class="text-center md:text-left">
                     <div class="flex items-center justify-center md:justify-start gap-2 mb-4">
+                        <p class="text-sm text-gray-400 pr-2">Available for new opportunities?</p>
                         <div class="status-dot"></div>
-                        <p class="text-sm text-gray-400">Available for and new opportunities</p>
+                        <p class="text-sm text-gray-400 -ml-2">Not available</p>
                     </div>
                     <h1 class="text-4xl md:text-6xl font-bold tracking-tighter leading-tight md:leading-snug mb-4">
                         Passionate Developer & Informatics Graduate
@@ -92,16 +121,80 @@
                       <p>
                         My journey into tech started with a childhood curiosity for how computers work and led me to a degree in Informatics Engineering. I thrive on the challenge of solving complex problems and am passionate about building smooth, user-friendly applications with the skills I developed in languages like C++, Kotlin, and Flutter.
                       </p>
-                      <a href="#about-me.html" class="inline-block mt-4 text-sm font-medium link-yoimiya">
+                      <a href="pages/about-me.html" class="inline-block mt-4 text-sm font-medium link-yoimiya">
                         Learn more about my journey →
                       </a>
+                    </div>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-12 mt-12">
+                    <!-- Educations -->
+                    <div>
+                        <h3 class="text-xl font-semibold mb-6 text-yoimiya">Educations</h3>
+                        <div class="relative border-l border-yellow-500/20 pl-6 space-y-6">
+                            <!-- Education -->
+                            <div class="relative">
+                                <div class="bg-white/5 rounded-lg p-4 shadow">
+                                <h4 class="font-semibold text-yellow-300">RevoU</h4>
+                                <p class="text-sm text-gray-400">Fullstack Software Engineer</p>
+                                <p class="text-sm text-gray-400">June 2025 - Present</p>
+                                </div>
+                            </div>
+                            <!-- Education -->
+                            <div class="relative">
+                                <div class="bg-white/5 rounded-lg p-4 shadow">
+                                <h4 class="font-semibold text-yellow-300">University of Surabaya (UBAYA)</h4>
+                                <p class="text-sm text-gray-400">Bachelor in Informatics</p>
+                                <p class="text-sm text-gray-400">August 2018 - June 2025</p>
+                                <p class="text-xs text-gray-500">GPA: 3.32 / 4.00</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Experiences -->
+                    <div>
+                        <h3 class="text-xl font-semibold mb-6 text-yoimiya">Experiences</h3>
+                        <div class="relative border-l border-yellow-500/20 pl-6 space-y-6">
+                            <!-- Intern and Work -->
+                            <div class="relative">
+                                <div class="bg-white/5 rounded-lg p-4 shadow">
+                                <h4 class="font-semibold text-yellow-300">Bluepay</h4>
+                                <p class="text-sm text-gray-400">June 2025 - Present</p>
+                                <p class="text-xs text-gray-500">Fullstack Developer</p>
+                                </div>
+                            </div>
+                            <!-- Intern and Work -->
+                            <div class="relative">
+                                <div class="bg-white/5 rounded-lg p-4 shadow">
+                                <h4 class="font-semibold text-yellow-300">Brain Domain Ltd</h4>
+                                <p class="text-sm text-gray-400">May 2025 - Present</p>
+                                <p class="text-xs text-gray-500">Frontend Developer</p>
+                                </div>
+                            </div>
+                            <!-- Intern and Work -->
+                            <div class="relative">
+                                <div class="bg-white/5 rounded-lg p-4 shadow">
+                                <h4 class="font-semibold text-yellow-300">GAOTek Inc.</h4>
+                                <p class="text-sm text-gray-400">July 2024 - September 2024</p>
+                                <p class="text-xs text-gray-500">Web Development Intern</p>
+                                </div>
+                            </div>
+                            <!-- Intern and Work -->
+                            <div class="relative">
+                                <div class="bg-white/5 rounded-lg p-4 shadow">
+                                <h4 class="font-semibold text-yellow-300">DBL Academy Indonesia</h4>
+                                <p class="text-sm text-gray-400">January 2023 - October 2023</p>
+                                <p class="text-xs text-gray-500">Asistant Basketball Coach (Part-time)</p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </section>
 
             <!-- Project Section -->
-            <section id="projects" class="py-20 md:py-32 border-t border-yoimiya">
-                <h2 class="text-2xl font-bold mb-8 text-center md:text-left">My Projects</h2>
+            <section class="py-20 md:py-32 border-t border-yoimiya">
+                <h2 id="projects" class="text-2xl font-bold mb-8 text-center md:text-left">My Projects</h2>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                     <div class="project-card rounded-lg shadow-lg p-6 flex flex-col">
                         <div class="flex-grow">
@@ -111,7 +204,7 @@
                                 <span class="tech-item">Flutter</span>
                             </div>
                         </div>
-                        <a href="#" class="text-sm font-medium link-yoimiya mt-auto">View Project →</a>
+                        <a href="#" class="text-sm font-medium link-yoimiya mt-auto disabled">Final Thesis Project (Done)</a>
                     </div>
                     <div class="project-card rounded-lg shadow-lg p-6 flex flex-col">
                         <div class="flex-grow">
@@ -124,7 +217,21 @@
                         </div>
                         <a href="#" class="text-sm font-medium link-yoimiya mt-auto disabled">Classified (On-going) ✘</a>
                     </div>
+                    <div class="project-card rounded-lg shadow-lg p-6 flex flex-col">
+                        <div class="flex-grow">
+                            <h3 class="text-xl font-semibold mb-2">Bluepay</h3>
+                            <p class="text-gray-400 mb-4">An acquiring system payment gateway. Based on QR Code.</p>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="tech-item">Golang</span>
+                                <span class="tech-item">TypeScript</span>
+                                <span class="tech-item">JavaScript</span>
+                                <span class="tech-item">CSS</span>
+                            </div>
+                        </div>
+                        <a href="#" class="text-sm font-medium link-yoimiya mt-auto disabled">Classified (On-going) ✘</a>
+                    </div>
                 </div>
+                
             </section>
 
             <!-- Contact Section -->
@@ -134,7 +241,8 @@
                     Have a question or want to work together? Feel free to reach out using the form below.
                 </p>
                 
-                <form action="#" method="POST" class="max-w-xl mx-auto text-left">
+                <div class="contact-card">
+                    <form action="#" method="POST" class="max-w-xl mx-auto text-left">
                     <div class="mb-6">
                         <label for="name" class="block mb-2 text-sm font-medium text-gray-300">Full Name</label>
                         <input type="text" id="name" name="name" class="w-full p-3 rounded-md bg-gray-800/50 border-2 border-transparent focus:border-yellow-400/50 focus:ring-0 transition-colors" placeholder="Your Name" required>
@@ -153,6 +261,7 @@
                         </button>
                     </div>
                 </form>
+                </div>
             </section>
         </main>
 
@@ -176,6 +285,7 @@
     </div>
 
     <!-- Link to external JavaScript file -->
+    <script src="js/menuToggle.js"></script>
     <script src="js/timeUpdate.js"></script>
 </body>
 </html>
