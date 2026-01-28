@@ -32,12 +32,6 @@ The design is inspired by a custom "**Yoimiya from Genshin Impact**" color theme
 - **Accessibility & SEO:**
     - Built with semantic HTML5 tags (`<header>`, `<main>`, `<section>`, `<nav>`) for improved accessibility and search engine optimization.
 
-## Technologies Used
-- **Front-End:** HTML5, CSS3, JavaScript
-- **CSS Framework:** Tailwind CSS
-- **Fonts:** Google Fonts
-- **Icons:** Inline SVG for icons. Sourced from libraries like Lucide.
-
 ## Development Tools:
 Recommended for local development:
 IDE:
@@ -49,8 +43,13 @@ Extension in VS Code:
 - **CSS Peek**
 
 ## How to Access and Use
-- **Clone or Download:** Clone this repository or download the ZIP file containing `index.html`, `about-me.html`, `menuToggle.js`, `timeUpdate.js`, and `style.css`.
+- **Clone or Download:** Clone this repository or download the ZIP file
 - **Local Development:** For the best development experience, open the project folder in a code editor like **Visual Studio Code** and use a **Live Server** extension to automatically reload the page on changes, and also Extension **Markdown Preview Enchanced** for markdown preview.
+1. Install dependencies:
+   `npm install`
+2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
+3. Run the app:
+   `npm run dev`
 
 ## How to Deploy
 Case: Netlify

@@ -1,291 +1,58 @@
+
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
-<head>
-    <!-- Meta tags for character set and viewport -->
-    <meta charset="UTF-8">
-    <meta name="description" content="Farrel Tito is a developer and informatics graduate with a passion for creating innovative solutions. By providing personal portfolio to see his projects and skills.">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <!-- Title of the page -->
-    <title>Farrel Tito | Developer & Informatics Graduate</title>
-
-    <!-- Link to Tailwind CSS and Google Fonts -->
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Farrel Tito | Portfolio</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-    <!-- Link to the external files -->
-    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Syne:wght@400;700;800&display=swap" rel="stylesheet">
+    <style>
+      body {
+        font-family: 'Space Grotesk', sans-serif;
+        background-color: #f0f0f0;
+      }
+      h1, h2, h3, .font-syne {
+        font-family: 'Syne', sans-serif;
+      }
+      .neo-shadow {
+        box-shadow: 4px 4px 0px 0px rgba(0,0,0,1);
+      }
+      .neo-shadow-lg {
+        box-shadow: 8px 8px 0px 0px rgba(0,0,0,1);
+      }
+      .neo-shadow-hover:hover {
+        box-shadow: 12px 12px 0px 0px rgba(0,0,0,1);
+        transform: translate(-4px, -4px);
+      }
+      .neo-border {
+        border: 4px solid black;
+      }
+      @keyframes float {
+        0% { transform: translateY(0px); }
+        50% { transform: translateY(-10px); }
+        100% { transform: translateY(0px); }
+      }
+      .animate-float {
+        animation: float 3s ease-in-out infinite;
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react/": "https://esm.sh/react@^19.2.4/",
+    "react": "https://esm.sh/react@^19.2.4",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.4/",
+    "@google/genai": "https://esm.sh/@google/genai@^1.38.0"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
 </head>
-<body class="antialiased">
-    <div class="noise"></div>
-
-    <!-- Main Container -->
-    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-
-        <!-- Header Section -->
-        <header class="flex justify-between items-center py-8">
-            <div>
-                <a href="/" class="text-lg font-bold tracking-tight gradient-text">Farrel Tito</a>
-            </div>
-            <nav class="hidden md:flex items-center space-x-8">
-                <a href="pages/about-me.html" class="text-sm font-medium text-gray-300 hover:text-white transition-colors">About</a>
-                <a href="#projects" class="text-sm font-medium text-gray-300 hover:text-white transition-colors">Projects</a>
-                <a href="mailto:your@email.com" class="text-sm font-medium text-gray-300 hover:text-white transition-colors">Contact via e-mail</a>
-            </nav>
-            <!-- Hamburger Button (Visible on Mobile Only) -->
-            <button id="hamburger-btn" class="md:hidden text-white focus:outline-none">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                        d="M4 6h16M4 12h16M4 18h16" />
-                </svg>
-            </button>
-        </header>
-
-        <!-- Slide-in Mobile Menu -->
-        <div id="mobile-menu" class="fixed top-0 right-0 w-2/3 max-w-sm h-full bg-[#2a2a3e] z-50 shadow-lg transform translate-x-full transition-transform duration-300">
-            <nav class="p-6 flex flex-col gap-4 text-sm text-white">
-                <a href="pages/about-me.html" class="hover:text-yellow-400">About</a>
-                <a href="#projects" class="hover:text-yellow-400">Projects</a>
-                <a href="mailto:your@email.com" class="hover:text-yellow-400">Contact via e-mail</a>
-            </nav>
-            <!-- Close Button -->
-            <div class="mt-auto text-center pb-6">
-            <button id="close-menu-btn" class="inline-flex items-center gap-2 text-sm font-medium text-gray-400 hover:text-white transition">
-                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <line x1="18" x2="6" y1="6" y2="18" />
-                <line x1="6" x2="18" y1="6" y2="18" />
-                </svg>
-                Close Menu
-            </button>
-            </div>
-        </div>
-
-<!-- Overlay -->
-<div id="overlay" class="fixed inset-0 bg-black/50 z-40 hidden"></div>
-
-        <!-- Hero/Main Section -->
-        <main>
-            <section id="home" class="py-20 md:py-32">
-                <div class="text-center md:text-left">
-                    <div class="flex items-center justify-center md:justify-start gap-2 mb-4">
-                        <p class="text-sm text-gray-400 pr-2">Available for new opportunities?</p>
-                        <div class="status-dot"></div>
-                        <p class="text-sm text-gray-400 -ml-2">Not available</p>
-                    </div>
-                    <h1 class="text-4xl md:text-6xl font-bold tracking-tighter leading-tight md:leading-snug mb-4">
-                        Passionate Developer & Informatics Graduate
-                    </h1>
-                    <p class="text-lg text-gray-400 max-w-2xl mx-auto md:mx-0">
-                        Hi, I'm Farrel Tito, a developer with a passion for creating innovative solutions. I hold a degree in Informatics with 3.32 GPA from UBAYA (University of Surabaya) and have experience in various programming languages and technologies.
-                    </p>
-                    <div class="mt-8 flex flex-col items-center md:items-start gap-8">
-                        <div class="flex flex-wrap items-center justify-center md:justify-start gap-x-6 gap-y-4">
-                            <a href="https://github.com/farreltito" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 link-yoimiya transition-colors text-sm font-medium">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                    <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
-                                </svg>
-                                GitHub
-                            </a>
-                            <a href="https://www.linkedin.com/in/farreltito/" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 link-yoimiya transition-colors text-sm font-medium">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
-                                    <rect x="2" y="9" width="4" height="12"></rect>
-                                    <circle cx="4" cy="4" r="2"></circle>
-                                </svg>
-                                LinkedIn
-                            </a>
-                            <a href="https://www.youtube.com/@bangtito" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 link-yoimiya transition-colors text-sm font-medium">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                    <path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"></path>
-                                    <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon>
-                                </svg>
-                                YouTube
-                            </a>
-                        </div>
-                        <div class="text-sm text-gray-500">
-                            <span id="time"></span> Jakarta, Indonesia
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- About Me Section -->
-            <section id="about" class="py-20 md:py-32 border-t border-yoimiya">
-                <h2 class="text-2xl font-bold mb-8 text-center md:text-left">About Me</h2>
-                <div class="flex flex-col md:flex-row items-center gap-8 md:gap-12">
-                    <div class="flex-shrink-0">
-                        <img src="images/putyourphotohere.jpg" alt="Farrel Tito profile picture" class="rounded-full w-32 h-32 md:w-60 md:h-60 object-cover border-4 border-yoimiya">
-                    </div>
-                    <div class="space-y-4 text-center md:text-left">
-                      <p>
-                        My journey into tech started with a childhood curiosity for how computers work and led me to a degree in Informatics Engineering. I thrive on the challenge of solving complex problems and am passionate about building smooth, user-friendly applications with the skills I developed in languages like C++, Kotlin, and Flutter.
-                      </p>
-                      <a href="pages/about-me.html" class="inline-block mt-4 text-sm font-medium link-yoimiya">
-                        Learn more about my journey →
-                      </a>
-                    </div>
-                </div>
-
-                <div class="grid md:grid-cols-2 gap-12 mt-12">
-                    <!-- Educations -->
-                    <div>
-                        <h3 class="text-xl font-semibold mb-6 text-yoimiya">Educations</h3>
-                        <div class="relative border-l border-yellow-500/20 pl-6 space-y-6">
-                            <!-- Education -->
-                            <div class="relative">
-                                <div class="bg-white/5 rounded-lg p-4 shadow">
-                                <h4 class="font-semibold text-yellow-300">RevoU</h4>
-                                <p class="text-sm text-gray-400">Fullstack Software Engineer</p>
-                                <p class="text-sm text-gray-400">June 2025 - Present</p>
-                                </div>
-                            </div>
-                            <!-- Education -->
-                            <div class="relative">
-                                <div class="bg-white/5 rounded-lg p-4 shadow">
-                                <h4 class="font-semibold text-yellow-300">University of Surabaya (UBAYA)</h4>
-                                <p class="text-sm text-gray-400">Bachelor in Informatics</p>
-                                <p class="text-sm text-gray-400">August 2018 - June 2025</p>
-                                <p class="text-xs text-gray-500">GPA: 3.32 / 4.00</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Experiences -->
-                    <div>
-                        <h3 class="text-xl font-semibold mb-6 text-yoimiya">Experiences</h3>
-                        <div class="relative border-l border-yellow-500/20 pl-6 space-y-6">
-                            <!-- Intern and Work -->
-                            <div class="relative">
-                                <div class="bg-white/5 rounded-lg p-4 shadow">
-                                <h4 class="font-semibold text-yellow-300">Bluepay</h4>
-                                <p class="text-sm text-gray-400">June 2025 - Present</p>
-                                <p class="text-xs text-gray-500">Fullstack Developer</p>
-                                </div>
-                            </div>
-                            <!-- Intern and Work -->
-                            <div class="relative">
-                                <div class="bg-white/5 rounded-lg p-4 shadow">
-                                <h4 class="font-semibold text-yellow-300">Brain Domain Ltd</h4>
-                                <p class="text-sm text-gray-400">May 2025 - Present</p>
-                                <p class="text-xs text-gray-500">Frontend Developer</p>
-                                </div>
-                            </div>
-                            <!-- Intern and Work -->
-                            <div class="relative">
-                                <div class="bg-white/5 rounded-lg p-4 shadow">
-                                <h4 class="font-semibold text-yellow-300">GAOTek Inc.</h4>
-                                <p class="text-sm text-gray-400">July 2024 - September 2024</p>
-                                <p class="text-xs text-gray-500">Web Development Intern</p>
-                                </div>
-                            </div>
-                            <!-- Intern and Work -->
-                            <div class="relative">
-                                <div class="bg-white/5 rounded-lg p-4 shadow">
-                                <h4 class="font-semibold text-yellow-300">DBL Academy Indonesia</h4>
-                                <p class="text-sm text-gray-400">January 2023 - October 2023</p>
-                                <p class="text-xs text-gray-500">Asistant Basketball Coach (Part-time)</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Project Section -->
-            <section class="py-20 md:py-32 border-t border-yoimiya">
-                <h2 id="projects" class="text-2xl font-bold mb-8 text-center md:text-left">My Projects</h2>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                    <div class="project-card rounded-lg shadow-lg p-6 flex flex-col">
-                        <div class="flex-grow">
-                            <h3 class="text-xl font-semibold mb-2">Band Studio Reservation and Management</h3>
-                            <p class="text-gray-400 mb-4">An application that handles band studio reservations and assists with studio management tasks.</p>
-                            <div class="flex flex-wrap gap-2 mb-4">
-                                <span class="tech-item">Flutter</span>
-                            </div>
-                        </div>
-                        <a href="#" class="text-sm font-medium link-yoimiya mt-auto disabled">Final Thesis Project (Done)</a>
-                    </div>
-                    <div class="project-card rounded-lg shadow-lg p-6 flex flex-col">
-                        <div class="flex-grow">
-                            <h3 class="text-xl font-semibold mb-2">Henkovac Project</h3>
-                            <p class="text-gray-400 mb-4">The Henkovac M5 Automation System is an industrial vacuum sealing machine with a touchscreen GUI. It is built using C# and WPF.</p>
-                            <div class="flex flex-wrap gap-2 mb-4">
-                                <span class="tech-item">C#</span>
-                                <span class="tech-item">WPF</span>
-                            </div>
-                        </div>
-                        <a href="#" class="text-sm font-medium link-yoimiya mt-auto disabled">Classified (On-going) ✘</a>
-                    </div>
-                    <div class="project-card rounded-lg shadow-lg p-6 flex flex-col">
-                        <div class="flex-grow">
-                            <h3 class="text-xl font-semibold mb-2">Bluepay</h3>
-                            <p class="text-gray-400 mb-4">An acquiring system payment gateway. Based on QR Code.</p>
-                            <div class="flex flex-wrap gap-2 mb-4">
-                                <span class="tech-item">Golang</span>
-                                <span class="tech-item">TypeScript</span>
-                                <span class="tech-item">JavaScript</span>
-                                <span class="tech-item">CSS</span>
-                            </div>
-                        </div>
-                        <a href="#" class="text-sm font-medium link-yoimiya mt-auto disabled">Classified (On-going) ✘</a>
-                    </div>
-                </div>
-                
-            </section>
-
-            <!-- Contact Section -->
-            <section id="contact" class="py-20 md:py-32 border-t border-yoimiya text-center">
-                <h2 class="text-3xl font-bold mb-4">Get In Touch</h2>
-                <p class="text-lg text-gray-400 max-w-xl mx-auto mb-8">
-                    Have a question or want to work together? Feel free to reach out using the form below.
-                </p>
-                
-                <div class="contact-card">
-                    <form action="#" method="POST" class="max-w-xl mx-auto text-left">
-                    <div class="mb-6">
-                        <label for="name" class="block mb-2 text-sm font-medium text-gray-300">Full Name</label>
-                        <input type="text" id="name" name="name" class="w-full p-3 rounded-md bg-gray-800/50 border-2 border-transparent focus:border-yellow-400/50 focus:ring-0 transition-colors" placeholder="Your Name" required>
-                    </div>
-                    <div class="mb-6">
-                        <label for="email" class="block mb-2 text-sm font-medium text-gray-300">Email Address</label>
-                        <input type="email" id="email" name="email" class="w-full p-3 rounded-md bg-gray-800/50 border-2 border-transparent focus:border-yellow-400/50 focus:ring-0 transition-colors" placeholder="your@email.com" required>
-                    </div>
-                    <div class="mb-8">
-                        <label for="message" class="block mb-2 text-sm font-medium text-gray-300">Message</label>
-                        <textarea id="message" name="message" rows="5" class="w-full p-3 rounded-md bg-gray-800/50 border-2 border-transparent focus:border-yellow-400/50 focus:ring-0 transition-colors" placeholder="Your message..." required></textarea>
-                    </div>
-                    <div class="text-center">
-                        <button type="submit" class="inline-block bg-yellow-400/80 text-gray-900 font-bold py-3 px-8 rounded-lg hover:bg-yellow-400 transition-colors text-lg">
-                            Contact Farrel
-                        </button>
-                    </div>
-                </form>
-                </div>
-            </section>
-        </main>
-
-        <!-- Footer Section -->
-         <footer class="border-yoimiya text-center py-8 mt-20">
-            <div class="flex justify-center gap-6 mb-4">
-                <a href="https://github.com/farreltito" target="_blank" rel="noopener noreferrer" class="link-yoimiya transition-colors">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
-                </a>
-                <a href="https://www.linkedin.com/in/farreltito/" target="_blank" rel="noopener noreferrer" class="link-yoimiya transition-colors">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
-                </a>
-                <a href="https://www.youtube.com/@bangtito" target="_blank" rel="noopener noreferrer" class="link-yoimiya transition-colors">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"></path><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon></svg>
-                </a>
-            </div>
-            <p class="text-sm text-gray-500">&copy; <span id="year"></span> Farrel Tito. All Rights Reserved.</p>
-         </footer>
-    </div>
-
-    <!-- Link to external JavaScript file -->
-    <script src="js/menuToggle.js"></script>
-    <script src="js/timeUpdate.js"></script>
+  <body>
+    <div id="root"></div>
+  <script type="module" src="/index.tsx"></script>
 </body>
 </html>
