@@ -1,0 +1,38 @@
+/* ==========================================
+   Marquee Animation (App.tsx)
+   ========================================== */
+@keyframes marquee {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-150%);
+  }
+}
+
+.animate-marquee {
+  animation: marquee 10s linear infinite;
+  display: flex;
+  width: 100%;
+}
+
+/* ==========================================
+   Timeline Scroll Line Animation
+   ========================================== */
+@keyframes scrollLine {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: 0 1000px;
+  }
+}
+
+/* ==========================================
+   Mobile Overrides
+   ========================================== */
+@media (max-width: 640px) {
+  #timeline h2 {
+    font-size: 1.5rem;
+  }
+}

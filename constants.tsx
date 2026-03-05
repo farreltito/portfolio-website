@@ -4,19 +4,19 @@ import { Project, TimelineItem, Skill } from './types';
 export const PROJECTS: Project[] = [
   {
     id: 1,
-    title: "E-Commerce Brutal",
-    description: "A high-performance online store built with Next.js and Tailwind, emphasizing fast interactions and bold UI.",
-    tags: ["React", "TypeScript", "Tailwind"],
-    link: "#",
+    title: "BluePay Indonesia",
+    description: "An Aqcuiring merchant apps that related to QRIS payment.",
+    tags: ["Next.js", "TypeScript", "Golang", "Tailwind"],
+    link: "https://bluepay.id/",
     image: "https://picsum.photos/seed/p1/600/400"
   },
   {
     id: 2,
-    title: "AI Chat Assistant",
-    description: "Integrated Gemini API for real-time customer support with persistent memory and personality.",
-    tags: ["Gemini", "Node.js", "Redis"],
-    link: "#",
-    image: "https://picsum.photos/seed/p2/600/400"
+    title: "Quickbill Indonesia",
+    description: "Developed frontend features for a fintech platform that streamlines digital invoicing, online payments, and transaction reconciliation for businesses.",
+    tags: ["Next.js", "TypeScript", "Golang", "Tailwind"],
+    link: "https://quickbill.id/",
+    image: "/(public)/images/projects/logo-quickbill.png"
   },
   {
     id: 3,
@@ -56,10 +56,10 @@ export const TIMELINE: TimelineItem[] = [
   {
     id: 4,
     type: 'education',
-    title: "UI Design Bootcamp",
-    subtitle: "Design School X",
-    date: "2021",
-    description: "Intensive 6-month program covering visual hierarchy, typography, and neobrutalist trends."
+    title: "Bachelor of Computer Science",
+    subtitle: "University of Surabaya (UBAYA)",
+    date: "2018 - 2025",
+    description: "Focused on Information Management and Enterprise Systems (IMES). (3,32 GPA out of 4,00)"
   }
 ];
 
