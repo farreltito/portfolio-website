@@ -11,7 +11,7 @@ const Footer: React.FC = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     // Simulate sending
-    console.log("Sending message to farrel@example.com:", formState);
+    console.log("Sending message to [EMAIL_ADDRESS]:", formState);
     setIsSent(true);
     setTimeout(() => setIsSent(false), 3000);
   };
