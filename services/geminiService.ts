@@ -1,12 +1,29 @@
 
 import { GoogleGenAI } from "@google/genai";
 
-const ai = new GoogleGenAI({ apiKey: process.env.API_KEY || '' });
+let ai: GoogleGenAI | null = null;
+
+const getAI = () => {
+  if (!ai) {
+    const apiKey = process.env.API_KEY;
+    if (!apiKey) {
+      console.warn("Gemini API Key is not configured.");
+      return null;
+    }
+    ai = new GoogleGenAI({ apiKey });
+  }
+  return ai;
+};
 
 export const askFarrelAI = async (query: string) => {
   try {
-    const response = await ai.models.generateContent({
-      model: "gemini-3-flash-preview",
+    const client = getAI();
+    if (!client) {
+      return "Oops! Farrel's AI is not configured yet. Check back later!";
+    }
+
+    const response = await client.models.generateContent({
+      model: "gemini-2.0-flash",
       contents: query,
       config: {
         systemInstruction: `You are Farrel Tito's AI personal assistant. 
