@@ -20,10 +20,10 @@ export const PROJECTS: Project[] = [
   },
   {
     id: 3,
-    title: "Portfolio Minimalism 1.0",
-    description: "The previous iteration of my personal site focused on clean lines and negative space.",
-    tags: ["Astro", "Framer Motion"],
-    link: "https://farreltito.netlify.app/",
+    title: "Brain Domain Ltd",
+    description: "Developed an Automation System for Industrial application using C# and .NET.",
+    tags: ["C#", ".NET"],
+    link: "https://brain-domain.com/",
     image: "https://picsum.photos/seed/p3/600/400"
   }
 ];
@@ -32,29 +32,45 @@ export const TIMELINE: TimelineItem[] = [
   {
     id: 1,
     type: 'experience',
-    title: "Lead Frontend Engineer",
-    subtitle: "Creative Tech Solutions",
-    date: "2023 - Present",
-    description: "Architecting scalable React architectures and mentoring junior developers in modern CSS practices."
+    title: "Fullstack Developer",
+    subtitle: "Quickbill Indonesia",
+    date: "2025 - Present",
+    description: "Developing Digital Invoicing Platform using Next.js and TypeScript."
   },
   {
     id: 2,
     type: 'experience',
-    title: "UI/UX Designer",
-    subtitle: "Freelance Agency",
-    date: "2021 - 2023",
-    description: "Crafting digital experiences for 20+ global clients with a focus on accessibility and bold aesthetics."
+    title: "Fullstack Developer",
+    subtitle: "Brain Domain Ltd",
+    date: "2025 - Present",
+    description: "Developing Industrial Automation using C# and .NET."
   },
   {
     id: 3,
     type: 'education',
-    title: "Bachelor of Computer Science",
-    subtitle: "Telkom University",
-    date: "2018 - 2022",
-    description: "Focused on Human-Computer Interaction and Software Engineering principles."
+    title: "Bootcamp Fullstack Software Engineer",
+    subtitle: "RevoU",
+    date: "2025 - 2026",
+    description: "Learned Fullstack Development using React, Next.js, TypeScript, and Tailwind."
   },
   {
     id: 4,
+    type: 'experience',
+    title: "Basketball Coach Assistant",
+    subtitle: "DBL Academy Surabaya - Part Time",
+    date: "2024",
+    description: "Assisting basketball coach in training for kids age 3 until age 12."
+  },
+  {
+    id: 5,
+    type: 'experience',
+    title: "Web Development Intern",
+    subtitle: "GAOTek Inc.",
+    date: "2024",
+    description: "Developed a web application using WordPress and PHP."
+  },
+  {
+    id: 6,
     type: 'education',
     title: "Bachelor of Computer Science",
     subtitle: "University of Surabaya (UBAYA)",
@@ -68,8 +84,9 @@ export const SKILLS: Skill[] = [
   { name: "Next.js", icon: "▲", color: "bg-white" },
   { name: "TypeScript", icon: "TS", color: "bg-blue-600" },
   { name: "Tailwind", icon: "🌊", color: "bg-cyan-400" },
-  { name: "Framer Motion", icon: "✨", color: "bg-pink-400" },
-  { name: "Gemini API", icon: "🤖", color: "bg-yellow-400" },
+  { name: "C#", icon: "C#", color: "bg-red-400" },
+  { name: ".NET", icon: ".NET", color: "bg-blue-400" },
+  { name: "Golang", icon: "Golang", color: "bg-blue-600" },
   { name: "Node.js", icon: "🟢", color: "bg-green-400" },
-  { name: "Figma", icon: "🎨", color: "bg-orange-400" },
+  { name: "Flutter", icon: "Flutter", color: "bg-blue-400" },
 ];
